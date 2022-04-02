@@ -1,0 +1,27 @@
+.tiktop__navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
+  top: 0;
+  position: fixed;
+  height: 60px;
+  z-index: 10;
+}
+.tiktok__navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1150px;
+  padding: 0 11rem;
+}
+
+.tiktok__navbar-container_left {
+  display: flex;
+}
+
+.tiktok__navbar-logo img {
+  height: 150px;
+  width: 60px;
+}
