@@ -1,0 +1,33 @@
+.bodyContainer {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.sideBarContainer {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  justify-content: flex-start;
+  perspective-origin: right top;
+  top: 60px;
+  bottom: 0;
+  width: 356px;
+  background: rgba(255, 255, 255, 1);
+  position: fixed;
+  z-index: 9;
+  padding-right: 8px;
+  flex: 1;
+}
+.mainContainer {
+  flex: 3;
+  margin-right: 16px;
+  margin-left: 16px;
+  width: 692px;
+  max-width: 692px;
+  padding: 24px 0;
+  position: relative;
+}

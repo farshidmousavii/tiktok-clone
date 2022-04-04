@@ -1,0 +1,169 @@
+.tiktok__sidebar {
+  padding: 20px 0 26px;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100%;
+}
+.tiktok__sidebar-mainContainer {
+  margin-bottom: 0.5rem;
+}
+.tiktok__sidebar-mainContainer div:hover {
+  background-color: #f5f5f5;
+  transition: background ease-in-out 200ms;
+  border-radius: 4px;
+}
+.navLink {
+  text-decoration: none;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  margin-left: 8px;
+  padding: 8px;
+  gap: 15px;
+}
+.active {
+  color: rgba(254, 44, 85, 1);
+}
+
+.navLink svg {
+  width: 25px;
+  height: 25px;
+}
+
+.tiktok__sidebar-frameContainer {
+  padding: 20px 8px 24px 8px;
+  position: relative;
+}
+
+.tiktok__sidebar-frameContainer p {
+  color: rgba(22, 24, 35, 0.5);
+  font-size: 16px;
+  line-height: 22px;
+}
+.tiktok__sidebar-frameContainer button {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  color: rgba(254, 44, 85, 1);
+  border-color: rgba(254, 44, 85, 1);
+  background-color: rgba(255, 255, 255, 1);
+  min-width: 168px;
+  min-height: 48px;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 600;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-top: 20px;
+  width: 100%;
+}
+.tiktok__sidebar-frameContainer button:hover {
+  background-color: rgba(254, 44, 85, 0.08);
+}
+.tiktok__sidebar-frameContainer button:active {
+  background-color: rgba(254, 44, 85, 0.2);
+}
+
+.tiktok__sidebar-frameContainer::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 8px;
+  right: 8px;
+  background: rgba(22, 24, 35, 0.12);
+
+  transform: scaleY(0.5);
+  top: 0;
+}
+
+.tiktok__sidebar-userContainer {
+  padding: 16px 0;
+  color: rgba(22, 24, 35, 0.75);
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+}
+
+.tiktok__sidebar-userContainer::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 8px;
+  right: 8px;
+  background: rgba(22, 24, 35, 0.12);
+  transform: scaleY(0.5);
+  top: 0;
+}
+.tiktok__sidebar-userContainer p {
+  padding: 0 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.userContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+  padding: 8px;
+  transition: background 200ms ease-in-out 0s;
+  gap: 10px;
+}
+.userContainer:hover {
+  background-color: #f5f5f5;
+}
+
+.userContainer a {
+  text-decoration: none;
+}
+
+.userContainer span img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.userTitleWrapper {
+  display: flex;
+  gap: 5px;
+}
+.user-title {
+  color: rgb(22, 24, 35);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: -2px;
+  max-width: 260px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.user-bluev img {
+  width: 14px;
+  height: 14px;
+}
+.userDesc {
+  color: rgba(22, 24, 35, 0.75);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  max-width: 260px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 !important;
+}

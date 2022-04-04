@@ -40,3 +40,25 @@
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
   }
 }
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #dddddd #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #dddddd;
+  border-radius: 10px;
+  border: 4px solid #ffffff;
+}
