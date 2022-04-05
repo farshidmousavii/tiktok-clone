@@ -11,10 +11,6 @@ const Sidebar = () => {
   const users = useContext(userContext);
   const [open, setOpen] = useState(false);
 
-  const handleSeeAll = () => {
-    setOpen(!open);
-  };
-
   return (
     <div className="tiktok__sidebar">
       <div className="tiktok__sidebar-mainContainer">
@@ -67,7 +63,7 @@ const Sidebar = () => {
             <div
               className="userContainer"
               key={user.uid}
-              style={{ display: `${open && index >= 5 ? "none" : ""}` }}
+              style={{ display: `${!open && index >= 5 ? "none" : ""}` }}
             >
               <Link to="/" className="suggest-user-avatar">
                 <div>
@@ -91,7 +87,7 @@ const Sidebar = () => {
           );
         })}
         <div className="seeAllContainer">
-          <p onClick={handleSeeAll}>{open ? "See less" : "See all"}</p>
+          <p onClick={() => setOpen(!open)}>{open ? "See less" : "See all"}</p>
         </div>
       </div>
     </div>
