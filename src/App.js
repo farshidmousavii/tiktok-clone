@@ -5,7 +5,7 @@ import Layout from "./layout/Layout";
 import { userContext } from "./context/UserContex";
 import { getSuggestedUsers } from "./services/APIServices";
 const App = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(null);
 
   const getUsers = async () => {
     try {

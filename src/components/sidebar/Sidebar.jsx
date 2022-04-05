@@ -62,6 +62,9 @@ const Sidebar = () => {
           <p onClick={() => setOpen(!open)}>{open ? "See less" : "See all"}</p>
         </div>
       </div>
+      <div className="tiktok__sidebar-discoverContainer">
+        <p>Discover</p>
+      </div>
     </div>
   );
 };

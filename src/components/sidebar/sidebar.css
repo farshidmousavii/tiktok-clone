@@ -89,7 +89,6 @@
 .tiktok__sidebar-userContainer {
   padding: 16px 0;
   color: rgba(22, 24, 35, 0.75);
-  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
@@ -125,4 +124,19 @@
   font-size: 14px;
   line-height: 20px;
   cursor: pointer;
+}
+
+.tiktok__sidebar-discoverContainer {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px 8px 8px;
+}
+
+.tiktok__sidebar-discoverContainer p {
+  color: rgba(22, 24, 35, 0.75);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  padding-bottom: 16px;
 }
