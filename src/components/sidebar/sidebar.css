@@ -113,61 +113,6 @@
   line-height: 20px;
 }
 
-.userContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-  border-radius: 4px;
-  padding: 8px;
-  transition: background 200ms ease-in-out 0s;
-  gap: 10px;
-}
-.userContainer:hover {
-  background-color: #f5f5f5;
-}
-
-.userContainer a {
-  text-decoration: none;
-}
-
-.userContainer span img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-
-.userTitleWrapper {
-  display: flex;
-  gap: 5px;
-}
-.user-title {
-  color: rgb(22, 24, 35);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  margin-top: -2px;
-  max-width: 260px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.user-bluev img {
-  width: 14px;
-  height: 14px;
-}
-.userDesc {
-  color: rgba(22, 24, 35, 0.75);
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-  max-width: 260px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 0 !important;
-}
-
 .seeAllContainer {
   display: flex;
   align-items: center;

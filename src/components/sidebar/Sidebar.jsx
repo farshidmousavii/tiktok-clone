@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { BsPeople } from "react-icons/bs";
 import { RiLiveLine } from "react-icons/ri";
-import badge from "../../assets/images/tiktok_ver.png";
+
 import "./sidebar.css";
-import { userContext } from "../../context/UserContex";
+import Suggested from "./suggested/Suggested";
 
 const Sidebar = () => {
-  const users = useContext(userContext);
   const [open, setOpen] = useState(false);
 
   return (
@@ -58,34 +57,7 @@ const Sidebar = () => {
       </div>
       <div className="tiktok__sidebar-userContainer">
         <p>Suggested accounts</p>
-        {users.slice(0, 20).map(({ user }, index) => {
-          return (
-            <div
-              className="userContainer"
-              key={user.uid}
-              style={{ display: `${!open && index >= 5 ? "none" : ""}` }}
-            >
-              <Link to="/" className="suggest-user-avatar">
-                <div>
-                  <span>
-                    <img src={user.avatar_thumb.url_list[0]} alt="" />
-                  </span>
-                </div>
-              </Link>
-              <Link to="/" className="suggest-user-content">
-                <div className="userTitleWrapper">
-                  <h4 className="user-title">{user.unique_id}</h4>
-                  <div className="user-bluev">
-                    {user.custom_verify === "Verified account" && (
-                      <img src={badge} alt="" />
-                    )}
-                  </div>
-                </div>
-                <p className="userDesc">{user.nickname}</p>
-              </Link>
-            </div>
-          );
-        })}
+        <Suggested open={open} />
         <div className="seeAllContainer">
           <p onClick={() => setOpen(!open)}>{open ? "See less" : "See all"}</p>
         </div>
