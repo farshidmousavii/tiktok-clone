@@ -167,3 +167,17 @@
   white-space: nowrap;
   padding: 0 !important;
 }
+
+.seeAllContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 8px;
+}
+.seeAllContainer p {
+  color: var(--red);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}

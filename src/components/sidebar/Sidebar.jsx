@@ -9,7 +9,12 @@ import { userContext } from "../../context/UserContex";
 
 const Sidebar = () => {
   const users = useContext(userContext);
-  const allUser = 20;
+  const [open, setOpen] = useState(false);
+
+  const handleSeeAll = () => {
+    setOpen(!open);
+  };
+
   return (
     <div className="tiktok__sidebar">
       <div className="tiktok__sidebar-mainContainer">
@@ -57,9 +62,13 @@ const Sidebar = () => {
       </div>
       <div className="tiktok__sidebar-userContainer">
         <p>Suggested accounts</p>
-        {users.slice(0, allUser).map(({ user }) => {
+        {users.slice(0, 20).map(({ user }, index) => {
           return (
-            <div className="userContainer" key={user.uid}>
+            <div
+              className="userContainer"
+              key={user.uid}
+              style={{ display: `${open && index >= 5 ? "none" : ""}` }}
+            >
               <Link to="/" className="suggest-user-avatar">
                 <div>
                   <span>
@@ -81,6 +90,9 @@ const Sidebar = () => {
             </div>
           );
         })}
+        <div className="seeAllContainer">
+          <p onClick={handleSeeAll}>{open ? "See less" : "See all"}</p>
+        </div>
       </div>
     </div>
   );
