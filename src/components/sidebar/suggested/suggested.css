@@ -52,3 +52,9 @@
   white-space: nowrap;
   padding: 0 !important;
 }
+
+@media screen and (max-width: 1071px) {
+  .suggest-user-content {
+    display: none;
+  }
+}
