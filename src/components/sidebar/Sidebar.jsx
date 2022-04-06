@@ -6,6 +6,7 @@ import { RiLiveLine } from "react-icons/ri";
 
 import "./sidebar.css";
 import Suggested from "./suggested/Suggested";
+import Discover from "./discover/Discover";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
@@ -64,6 +65,7 @@ const Sidebar = () => {
       </div>
       <div className="tiktok__sidebar-discoverContainer">
         <p>Discover</p>
+        <Discover />
       </div>
     </div>
   );
