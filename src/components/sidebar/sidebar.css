@@ -140,3 +140,34 @@
   line-height: 20px;
   padding-bottom: 16px;
 }
+.tiktik__sidebar-footerContainer {
+  position: relative;
+  padding-top: 16px;
+  padding-left: 8px;
+}
+.linkContainer {
+  margin-bottom: 10px;
+}
+.linkContainer a {
+  color: rgba(22, 24, 35, 0.5);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 5px;
+  text-decoration: none;
+}
+.linkContainer a:hover {
+  text-decoration: underline;
+}
+
+.tiktik__sidebar-footerContainer span {
+  color: rgba(22, 24, 35, 0.5);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  display: inline-block;
+  margin-right: 6px;
+  margin-top: 5px;
+}

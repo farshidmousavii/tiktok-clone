@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { BsPeople } from "react-icons/bs";
 import { RiLiveLine } from "react-icons/ri";
@@ -66,6 +66,31 @@ const Sidebar = () => {
       <div className="tiktok__sidebar-discoverContainer">
         <p>Discover</p>
         <Discover />
+      </div>
+      <div className="tiktik__sidebar-footerContainer">
+        <div className="linkContainer">
+          <Link to="/">About</Link>
+          <Link to="/">Newsroom</Link>
+          <Link to="/">Contact</Link>
+          <Link to="/">Careers</Link>
+          <Link to="/">ByteDance</Link>
+        </div>
+        <div className="linkContainer">
+          <Link to="/">Tiktok for Good</Link>
+          <Link to="/">Advertise</Link>
+          <Link to="/">Developers</Link>
+          <Link to="/">Transparency</Link>
+          <Link to="/">Tiktok Rewards</Link>
+        </div>
+        <div className="linkContainer">
+          <Link to="/">Help</Link>
+          <Link to="/">Safety</Link>
+          <Link to="/">Terms</Link>
+          <Link to="/">Privacy</Link>
+          <Link to="/">Creator Portal</Link>
+          <Link to="/">Community Guidelines</Link>
+        </div>
+        <span>@ 2022 TikTok (Farshid Mousavi)</span>
       </div>
     </div>
   );
