@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CgHashtag, CgMusic } from "react-icons/cg";
 import "./discover.css";
 import { getDiscover } from "../../../services/APIServices";
+import SkeletonDiscover from "../../../skeletons/SkeletonDiscover";
 const Discover = () => {
   const [discover, setDiscover] = useState(null);
   const getHashtag = async () => {
@@ -38,7 +39,11 @@ const Discover = () => {
     });
   };
 
-  return <div className="discover-list">{discover && renderHashtag()}</div>;
+  return (
+    <div className="discover-list">
+      {discover && renderHashtag()} {!discover && <SkeletonDiscover />}
+    </div>
+  );
 };
 
 export default Discover;
