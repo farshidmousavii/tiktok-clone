@@ -12,3 +12,8 @@ export const getDiscover = () => {
   const params = { region: "US", offset: "20" };
   return http.get("/discover", { params, headers });
 };
+
+export const getFeed = () => {
+  const params = { region: "US" };
+  return http.get("/feed", { params, headers });
+};

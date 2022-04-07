@@ -8,6 +8,7 @@
   position: fixed;
   height: 60px;
   z-index: 10;
+  background-color: #fff;
 }
 .tiktok__navbar-container {
   display: flex;

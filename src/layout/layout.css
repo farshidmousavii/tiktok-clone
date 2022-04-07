@@ -1,10 +1,15 @@
 .bodyContainer {
   margin-top: 60px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
-  flex: 1;
 }
-
+.bodyWrapper {
+  display: flex;
+  width: 100vw;
+  max-width: 1150px;
+  padding: 0 1rem;
+}
 .sideBarContainer {
   overflow-x: hidden;
   overflow-y: auto;
@@ -17,13 +22,10 @@
   bottom: 0;
   width: 356px;
   background: rgba(255, 255, 255, 1);
-  position: fixed;
   z-index: 9;
   padding-right: 8px;
-  flex: 1;
 }
 .mainContainer {
-  flex: 3;
   margin-right: 16px;
   margin-left: 16px;
   width: 692px;

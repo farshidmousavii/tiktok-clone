@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { userContext } from "../../../context/UserContex";
 import { Link } from "react-router-dom";
 import badge from "../../../assets/images/tiktok_ver.png";
 import "./suggested.css";
-import SkeletonSuggested from "../../../skeletons/SkeletonSuggested";
+import SkeletonSuggested from "../../skeletons/SkeletonSuggested";
+
 const Suggested = ({ open }) => {
   const users = useContext(userContext);
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CgHashtag, CgMusic } from "react-icons/cg";
 import "./discover.css";
 import { getDiscover } from "../../../services/APIServices";
-import SkeletonDiscover from "../../../skeletons/SkeletonDiscover";
+import SkeletonDiscover from "../../skeletons/SkeletonDiscover";
 const Discover = () => {
   const [discover, setDiscover] = useState(null);
   const getHashtag = async () => {
@@ -23,9 +23,9 @@ const Discover = () => {
   }, []);
 
   const renderHashtag = () => {
-    return discover.map((item) => {
+    return discover.map((item, index) => {
       return (
-        <Link to="/">
+        <Link to="/" key={index}>
           <div className="discover-itemContaier">
             {item.desc === "Trending hashtag" ? <CgHashtag /> : <CgMusic />}
             <p>
