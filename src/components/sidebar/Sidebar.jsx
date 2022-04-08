@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { AiFillHome } from "react-icons/ai";
-import { BsPeople } from "react-icons/bs";
-import { RiLiveLine } from "react-icons/ri";
-
-import "./sidebar.css";
+import { AiFillHome, AiOutlineHome } from "react-icons/ai";
+import { BsPeople, BsPeopleFill } from "react-icons/bs";
+import { RiLiveLine, RiLiveFill } from "react-icons/ri";
 import Suggested from "./suggested/Suggested";
 import Discover from "./discover/Discover";
+import "./sidebar.css";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
-
+  const [index, setIndex] = useState(0);
   return (
     <div className="tiktok__sidebar">
       <div className="tiktok__sidebar-mainContainer">
@@ -20,8 +19,10 @@ const Sidebar = () => {
             className={(navData) =>
               navData.isActive ? "navLink active" : "navLink"
             }
+            onClick={() => setIndex(1)}
           >
-            <AiFillHome />
+            {index === 1 ? <AiFillHome /> : <AiOutlineHome />}
+
             <h4>For You</h4>
           </NavLink>
         </div>
@@ -31,10 +32,9 @@ const Sidebar = () => {
             className={(navData) =>
               navData.isActive ? "navLink active" : "navLink"
             }
-            onClick={(prevState) => console.log(prevState)}
+            onClick={() => setIndex(2)}
           >
-            <BsPeople />
-
+            {index === 2 ? <BsPeopleFill /> : <BsPeople />}
             <h4>Following</h4>
           </NavLink>
         </div>
@@ -44,8 +44,9 @@ const Sidebar = () => {
             className={(navData) =>
               navData.isActive ? "navLink active" : "navLink"
             }
+            onClick={() => setIndex(3)}
           >
-            <RiLiveLine />
+            {index === 3 ? <RiLiveFill /> : <RiLiveLine />}
             <h4>Live</h4>
           </NavLink>
         </div>
