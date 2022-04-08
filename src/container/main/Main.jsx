@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getFeed } from "../../services/APIServices";
+import { CgMusic } from "react-icons/cg";
+import "./main.css";
 
 const Main = () => {
   const [feeds, setFeeds] = useState(null);
@@ -37,19 +39,36 @@ const Main = () => {
           </Link>
           <div className="tiktok__main-item">
             <div className="titleContainer">
-              <div className="authorContainer">
-                <Link to="/">{feed.author.unique_id}</Link>
-                <Link to="/">{feed.author.nickname}</Link>
+              <div className="titleContainer__top">
+                <Link to="/" style={{ display: "block", flex: 1 }}>
+                  <div className="authorContainer">
+                    <h3>{feed.author.unique_id}</h3>
+                    <h4>{feed.author.nickname}</h4>
+                  </div>
+                </Link>
+                <button>Follow</button>
               </div>
-              <button>Follow</button>
               <div className="videoDesc">
                 <span>{feed.desc}</span>
               </div>
               <div className="videoMusic">
-                <span>{feed.music.title}</span>
+                <Link to="/">
+                  <CgMusic />
+                  <h4>{feed.music.title}</h4>
+                </Link>
               </div>
             </div>
-            <div className="videoWrapper"></div>
+            <div className="videoWrapper">
+              <video
+                src={
+                  feed.video.download_addr.url_list[
+                    Math.floor(
+                      Math.random() * feed.video.download_addr.url_list.length
+                    )
+                  ]
+                }
+              ></video>
+            </div>
           </div>
         </div>
       );
