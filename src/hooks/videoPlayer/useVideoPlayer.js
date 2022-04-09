@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useVideoPlayer = (videoElement) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -45,6 +45,7 @@ const useVideoPlayer = (videoElement) => {
     progress,
     speed,
     isMuted,
+    togglePlay,
     handleOnTimeUpdate,
     handleVideoProgress,
     handleVideoSpeed,

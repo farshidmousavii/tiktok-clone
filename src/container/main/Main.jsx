@@ -1,24 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getFeed } from "../../services/APIServices";
 import { CgMusic } from "react-icons/cg";
+import Video from "../../components/video/Video";
+import badge from "../../assets/images/tiktok_ver.png";
 import "./main.css";
-import useVideoPlayer from "../../hooks/videoPlayer/useVideoPlayer";
 
 const Main = () => {
   const [feeds, setFeeds] = useState(null);
-  const videoElement = useRef(<video></video>);
-
-  const {
-    isPlaying,
-    progress,
-    speed,
-    isMuted,
-    handleOnTimeUpdate,
-    handleVideoProgress,
-    handleVideoSpeed,
-    toggleMute,
-  } = useVideoPlayer(videoElement);
 
   const getAllFeeds = async () => {
     try {
@@ -56,6 +45,12 @@ const Main = () => {
                 <Link to="/" style={{ display: "block", flex: 1 }}>
                   <div className="authorContainer">
                     <h3>{feed.author.unique_id}</h3>
+                    <div className="user-bluev">
+                      {feed.author.custom_verify === "Verified account" && (
+                        <img src={badge} alt="" />
+                      )}
+                    </div>
+
                     <h4>{feed.author.nickname}</h4>
                   </div>
                 </Link>
@@ -73,21 +68,15 @@ const Main = () => {
             </div>
             <div className="videoWrapper">
               <div className="feed__video">
-                <div className="video__Player-container">
-                  <video
-                    src={
-                      feed.video.download_addr.url_list[
-                        Math.floor(
-                          Math.random() *
-                            feed.video.download_addr.url_list.length
-                        )
-                      ]
-                    }
-                    className="video__player"
-                    ref={videoElement}
-                    // onTimeUpdate={handleOnTimeUpdate}
-                  ></video>
-                </div>
+                <Video
+                  src={
+                    feed.video.download_addr.url_list[
+                      Math.floor(
+                        Math.random() * feed.video.download_addr.url_list.length
+                      )
+                    ]
+                  }
+                />
               </div>
               <div className="feed_video-actions"></div>
             </div>
@@ -96,7 +85,11 @@ const Main = () => {
       );
     });
   };
-  return <>{feeds && renderFeed()}</>;
+  return (
+    <>
+      {feeds && renderFeed()} {!feeds && <h1>Loading</h1>}{" "}
+    </>
+  );
 };
 
 export default Main;

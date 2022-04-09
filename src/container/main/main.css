@@ -53,6 +53,13 @@
 }
 .authorContainer {
   display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.authorContainer img {
+  width: 1rem;
+  height: 1rem;
 }
 .authorContainer h3 {
   font-weight: 700;
@@ -73,7 +80,12 @@
 .authorContainer:hover h3 {
   text-decoration: underline;
 }
-
+.videoDesc {
+  margin-top: 5px;
+}
+.videoMusic {
+  margin-top: 10px;
+}
 .videoMusic a {
   display: flex;
   align-items: center;
@@ -95,19 +107,10 @@
 }
 
 .videoWrapper {
-  height: 800px;
-  width: 400px;
-  border-radius: 5px;
+  height: 600px;
+  width: 300px;
+  border-radius: 30px;
   position: relative;
   margin: 20px 0;
   display: flex;
-}
-
-.video__player {
-  display: block;
-  height: 100%;
-  width: 100%;
-  object-fit: fill;
-  border-radius: 4px;
-  cursor: pointer;
 }
