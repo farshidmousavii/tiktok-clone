@@ -1,11 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { getFeed } from "../../services/APIServices";
 import { CgMusic } from "react-icons/cg";
 import "./main.css";
+import useVideoPlayer from "../../hooks/videoPlayer/useVideoPlayer";
 
 const Main = () => {
   const [feeds, setFeeds] = useState(null);
+  const videoElement = useRef(<video></video>);
+
+  const {
+    isPlaying,
+    progress,
+    speed,
+    isMuted,
+    handleOnTimeUpdate,
+    handleVideoProgress,
+    handleVideoSpeed,
+    toggleMute,
+  } = useVideoPlayer(videoElement);
 
   const getAllFeeds = async () => {
     try {
@@ -59,15 +72,24 @@ const Main = () => {
               </div>
             </div>
             <div className="videoWrapper">
-              <video
-                src={
-                  feed.video.download_addr.url_list[
-                    Math.floor(
-                      Math.random() * feed.video.download_addr.url_list.length
-                    )
-                  ]
-                }
-              ></video>
+              <div className="feed__video">
+                <div className="video__Player-container">
+                  <video
+                    src={
+                      feed.video.download_addr.url_list[
+                        Math.floor(
+                          Math.random() *
+                            feed.video.download_addr.url_list.length
+                        )
+                      ]
+                    }
+                    className="video__player"
+                    ref={videoElement}
+                    // onTimeUpdate={handleOnTimeUpdate}
+                  ></video>
+                </div>
+              </div>
+              <div className="feed_video-actions"></div>
             </div>
           </div>
         </div>

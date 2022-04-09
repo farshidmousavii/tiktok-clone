@@ -9,7 +9,7 @@ import "./sidebar.css";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(1);
   return (
     <div className="tiktok__sidebar">
       <div className="tiktok__sidebar-mainContainer">
