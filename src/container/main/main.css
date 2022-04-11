@@ -3,6 +3,7 @@
   width: 692px;
   margin-top: 20px;
   position: relative;
+  scroll-snap-type: y mandatory;
 }
 .tiktok__main-item-Container::after {
   content: "";
@@ -42,6 +43,7 @@
 .titleContainer__top button {
   outline: none;
   border: 1px solid var(--red);
+  background-color: #ffff;
   color: var(--red);
   cursor: pointer;
   font-size: 16px;
@@ -50,6 +52,14 @@
   border-radius: 5px;
   min-height: 28px;
   min-width: 88px;
+  transition: background 0.2s ease-in-out;
+}
+.titleContainer__top button:active {
+  color: #ffff;
+  background-color: var(--red);
+}
+.titleContainer__top button:hover {
+  background-color: rgba(255, 211, 211, 0.3);
 }
 .authorContainer {
   display: flex;
@@ -113,4 +123,26 @@
   position: relative;
   margin: 20px 0;
   display: flex;
+}
+
+@media screen and (max-width: 1071px) {
+  .tiktok__main-item-Container {
+    width: 592px;
+    max-width: 592px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tiktok__main-item-Container {
+    width: calc(100vw - 32px - 68px);
+  }
+  .authorContainer {
+    display: block;
+  }
+  .titleContainer__top a {
+    display: inline-block;
+  }
+  .authorContainer__author {
+    display: flex;
+  }
 }

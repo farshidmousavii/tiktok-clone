@@ -42,19 +42,23 @@ const Main = () => {
           <div className="tiktok__main-item">
             <div className="titleContainer">
               <div className="titleContainer__top">
-                <Link to="/" style={{ display: "block", flex: 1 }}>
+                <Link to="/" style={{ flex: 1 }}>
                   <div className="authorContainer">
-                    <h3>{feed.author.unique_id}</h3>
-                    <div className="user-bluev">
-                      {feed.author.custom_verify === "Verified account" && (
-                        <img src={badge} alt="" />
-                      )}
+                    <div className="authorContainer__author">
+                      <h3>{feed.author.unique_id}</h3>
+                      <div className="user-bluev">
+                        {feed.author.custom_verify === "Verified account" && (
+                          <img src={badge} alt="" />
+                        )}
+                      </div>
                     </div>
 
                     <h4>{feed.author.nickname}</h4>
                   </div>
                 </Link>
-                <button>Follow</button>
+                <div>
+                  <button>Follow</button>
+                </div>
               </div>
               <div className="videoDesc">
                 <span>{feed.desc}</span>

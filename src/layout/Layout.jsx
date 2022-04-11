@@ -8,12 +8,13 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <div className="bodyContainer">
-        <div className="bodyWrapper">
+        <div className="navSide-Wrapper">
+          {/* when position fixed in flex , flex was destroyed , so use this wrapper and inside it can positin is fixed */}
           <div className="sideBarContainer">
             <Sidebar />
           </div>
-          <div className="mainContainer">{children}</div>
         </div>
+        <div className="mainContainer">{children}</div>
       </div>
     </>
   );

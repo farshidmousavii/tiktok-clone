@@ -178,11 +178,17 @@
     border-right: 1px solid rgba(22, 24, 35, 0.12);
     box-shadow: 0px 2px 8px rgb(0 0 0 / 6%);
   }
+  .tiktok__sidebar-mainContainer {
+    margin-left: 0.5rem;
+  }
   .tiktok__sidebar-mainContainer h4 {
     display: none;
   }
   .tiktok__sidebar-frameContainer {
     display: none;
+  }
+  .tiktok__sidebar-userContainer {
+    margin-left: 0.7rem;
   }
   .tiktok__sidebar-userContainer p {
     display: none;

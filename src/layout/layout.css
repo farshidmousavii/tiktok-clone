@@ -1,14 +1,17 @@
 .bodyContainer {
   margin-top: 60px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-.bodyWrapper {
   display: flex;
   width: 100vw;
   max-width: 1150px;
-  padding: 0 1rem;
+  flex: 1;
+  align-self: center;
+  justify-content: space-between;
+}
+
+.navSide-Wrapper {
+  position: relative;
+  width: 356px;
+  flex: 0 0 356px;
 }
 .sideBarContainer {
   overflow-x: hidden;
@@ -24,18 +27,24 @@
   background: rgba(255, 255, 255, 1);
   z-index: 9;
   padding-right: 8px;
+  position: fixed;
 }
 .mainContainer {
-  margin-right: 16px;
-  margin-left: 16px;
   width: 692px;
   max-width: 692px;
   padding: 24px 0;
   position: relative;
+  margin: 0 16px;
 }
 
 @media screen and (max-width: 1071px) {
   .sideBarContainer {
     overflow-y: hidden;
+    width: 72px;
+    flex: 0 0 72px;
+  }
+  .navSide-Wrapper {
+    width: 72px;
+    flex: 0 0 72px;
   }
 }
