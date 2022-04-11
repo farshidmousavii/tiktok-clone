@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import useVideoPlayer from "../../hooks/videoPlayer/useVideoPlayer";
 import {
   BsFlag,
@@ -11,13 +11,6 @@ import "./video.css";
 
 const Video = ({ src }) => {
   const videoElement = useRef(null);
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(([entry]) => {
-  //     console.log(entry);
-  //   });
-
-  //   observer.observe(videoElement.current);
-  // }, []);
   const {
     isPlaying,
     progress,
