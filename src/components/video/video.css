@@ -75,3 +75,17 @@
   border-radius: 20px;
   height: 4px;
 }
+
+.volumeContainer {
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  transform: rotate(90deg);
+  background: rgba(22, 24, 35, 0.34);
+  border-radius: 32px;
+  padding: 10px 10px;
+  display: flex;
+}
+.volume {
+  width: 50px;
+}

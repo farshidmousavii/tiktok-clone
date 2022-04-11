@@ -12,20 +12,22 @@ import "./video.css";
 const Video = ({ src }) => {
   const videoElement = useRef(null);
   // useEffect(() => {
-  //   const observer = new IntersectionObserver((enteries) => {
-  //     const entry = enteries[0];
-  //     console.log("entery", entry);
+  //   const observer = new IntersectionObserver(([entry]) => {
+  //     console.log(entry);
   //   });
-  //   // observer.observe(videoElement);
+
+  //   observer.observe(videoElement.current);
   // }, []);
   const {
     isPlaying,
     progress,
     speed,
     isMuted,
+    volume,
     handleOnTimeUpdate,
     handleVideoProgress,
     handleVideoSpeed,
+    handleVolume,
     toggleMute,
     togglePlay,
   } = useVideoPlayer(videoElement);
@@ -52,6 +54,17 @@ const Video = ({ src }) => {
             <div className="video__controller-nav_sound" onClick={toggleMute}>
               {isMuted ? <BsVolumeMuteFill /> : <BsVolumeUp />}
             </div>
+          </div>
+          <div className="volumeContainer">
+            <input
+              type="range"
+              min={0}
+              max={1}
+              step={0.01}
+              value={volume}
+              onChange={(e) => handleVolume(e)}
+              className="volume"
+            />
           </div>
           <div className="video__controller-nav_progress">
             <input
