@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getFeed } from "../../services/APIServices";
 import { CgMusic } from "react-icons/cg";
+import { BsHeartFill } from "react-icons/bs";
+import { FaCommentDots } from "react-icons/fa";
+import { RiShareForwardFill } from "react-icons/ri";
 import Video from "../../components/video/Video";
 import badge from "../../assets/images/tiktok_ver.png";
 import "./main.css";
+import NumberFormatter from "../../utils/numberFormatter";
 
 const Main = () => {
   const [feeds, setFeeds] = useState(null);
@@ -82,7 +86,32 @@ const Main = () => {
                   }
                 />
               </div>
-              <div className="feed_video-actions"></div>
+              <div className="feed_video-actions">
+                <button className="video__sideBar-actionItem">
+                  <span>
+                    <BsHeartFill />
+                  </span>
+                  <strong className="like-count">
+                    {NumberFormatter(feed.statistics.digg_count)}
+                  </strong>
+                </button>
+                <button className="video__sideBar-actionItem">
+                  <span>
+                    <FaCommentDots />
+                  </span>
+                  <strong className="comment-count">
+                    {NumberFormatter(feed.statistics.comment_count)}
+                  </strong>
+                </button>
+                <button className="video__sideBar-actionItem">
+                  <span>
+                    <RiShareForwardFill style={{ fontSize: "25px" }} />
+                  </span>
+                  <strong className="share-count">
+                    {NumberFormatter(feed.statistics.share_count)}
+                  </strong>
+                </button>
+              </div>
             </div>
           </div>
         </div>
