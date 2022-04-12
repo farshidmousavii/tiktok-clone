@@ -52,14 +52,12 @@
   border-radius: 5px;
   min-height: 28px;
   min-width: 88px;
-  transition: background 0.2s ease-in-out;
-}
-.titleContainer__top button:active {
-  color: #ffff;
-  background-color: var(--red);
 }
 .titleContainer__top button:hover {
   background-color: rgba(255, 211, 211, 0.3);
+}
+.titleContainer__top button:active {
+  background-color: rgba(255, 149, 149, 0.5);
 }
 .authorContainer {
   display: flex;

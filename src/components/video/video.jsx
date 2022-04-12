@@ -14,12 +14,12 @@ const Video = ({ src }) => {
   const {
     isPlaying,
     progress,
-    speed,
+    // speed,
     isMuted,
     volume,
     handleOnTimeUpdate,
     handleVideoProgress,
-    handleVideoSpeed,
+    // handleVideoSpeed,
     handleVolume,
     toggleMute,
     togglePlay,
@@ -46,18 +46,18 @@ const Video = ({ src }) => {
             </div>
             <div className="video__controller-nav_sound" onClick={toggleMute}>
               {isMuted ? <BsVolumeMuteFill /> : <BsVolumeUp />}
+              <div className="volumeContainer">
+                <input
+                  type="range"
+                  min={0}
+                  max={1}
+                  step={0.01}
+                  value={volume}
+                  onChange={(e) => handleVolume(e)}
+                  className="volume"
+                />
+              </div>
             </div>
-          </div>
-          <div className="volumeContainer">
-            <input
-              type="range"
-              min={0}
-              max={1}
-              step={0.01}
-              value={volume}
-              onChange={(e) => handleVolume(e)}
-              className="volume"
-            />
           </div>
           <div className="video__controller-nav_progress">
             <input
