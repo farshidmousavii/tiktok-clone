@@ -27,7 +27,11 @@ const Suggested = ({ open }) => {
               </span>
             </div>
           </Link>
-          <Link to={`/${user.unique_id}`} className="suggest-user-content">
+          <Link
+            to={`/${user.unique_id}`}
+            state={{ id: user.uid }}
+            className="suggest-user-content"
+          >
             <div className="userTitleWrapper">
               <h4 className="user-title">{user.unique_id}</h4>
               <div className="user-bluev">
