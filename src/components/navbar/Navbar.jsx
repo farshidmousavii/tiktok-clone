@@ -19,71 +19,65 @@ const Navbar = () => {
   };
 
   return (
-    <div className="tiktok__navbar">
-      <div className="tiktok__navbar-container">
-        <div className="tiktok__navbar-container_left">
-          <Link to="/" className="tiktok__navbar-logo">
-            <img src={logo} alt="" />
-          </Link>
-        </div>
-        <div className="tiktok__navbar-container_center">
-          <form
-            action="search"
-            className="search__input-form"
-            style={formStyle}
-          >
-            <input
-              type="text"
-              placeholder="Search accounts and videos"
-              className="search__input"
-              onFocus={focusHandler}
-              onBlur={blurHandler}
-            />
-            <span></span>
-            <button className="search__input-button">
-              <BiSearch className="search__icon" />
-            </button>
-          </form>
-        </div>
-        <div className="tiktok__navbar-container_right">
-          <Link to="/upload">Upload</Link>
-          <button type="button">Log in</button>
-          <div className="tiktok__navbar-container_right-iconWrapper">
-            <BsThreeDotsVertical
-              onMouseOver={() => setMenu(true)}
-              onClick={() => setMenu(!menu)}
-            />
-            {menu && (
-              <div
-                className="tiktok__navbar-menu shadow-drop-2-center"
-                onMouseLeave={() => setMenu(false)}
-              >
-                <ul>
-                  <li>
-                    <div className="tiktok__language">
-                      <GrLanguage />
-                      <span>English</span>
-                    </div>
-                  </li>
-                  <li>
-                    <Link to="/feedback">
-                      <BiHelpCircle />
-                      <span>Feedback and help</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <div className="tiktok__keyboard-shourtcut">
-                      <CgKeyboard />
-                      <span>Keyboard shortcuts</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
+    <>
+      <div className="tiktok__navbar-container_left">
+        <Link to="/" className="tiktok__navbar-logo">
+          <img src={logo} alt="" />
+        </Link>
+      </div>
+      <div className="tiktok__navbar-container_center">
+        <form action="search" className="search__input-form" style={formStyle}>
+          <input
+            type="text"
+            placeholder="Search accounts and videos"
+            className="search__input"
+            onFocus={focusHandler}
+            onBlur={blurHandler}
+          />
+          <span></span>
+          <button className="search__input-button">
+            <BiSearch className="search__icon" />
+          </button>
+        </form>
+      </div>
+      <div className="tiktok__navbar-container_right">
+        <Link to="/upload">Upload</Link>
+        <button type="button">Log in</button>
+        <div className="tiktok__navbar-container_right-iconWrapper">
+          <BsThreeDotsVertical
+            onMouseOver={() => setMenu(true)}
+            onClick={() => setMenu(!menu)}
+          />
+          {menu && (
+            <div
+              className="tiktok__navbar-menu shadow-drop-2-center"
+              onMouseLeave={() => setMenu(false)}
+            >
+              <ul>
+                <li>
+                  <div className="tiktok__language">
+                    <GrLanguage />
+                    <span>English</span>
+                  </div>
+                </li>
+                <li>
+                  <Link to="/feedback">
+                    <BiHelpCircle />
+                    <span>Feedback and help</span>
+                  </Link>
+                </li>
+                <li>
+                  <div className="tiktok__keyboard-shourtcut">
+                    <CgKeyboard />
+                    <span>Keyboard shortcuts</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

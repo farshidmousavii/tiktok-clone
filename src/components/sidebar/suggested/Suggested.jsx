@@ -16,14 +16,18 @@ const Suggested = ({ open }) => {
           key={user.uid}
           style={{ display: `${!open && index >= 5 ? "none" : ""}` }}
         >
-          <Link to="/" className="suggest-user-avatar">
+          <Link
+            to={`/${user.unique_id}`}
+            className="suggest-user-avatar"
+            onClick={() => console.log(user.unique_id)}
+          >
             <div>
               <span>
                 <img src={user.avatar_thumb.url_list[0]} alt="" />
               </span>
             </div>
           </Link>
-          <Link to="/" className="suggest-user-content">
+          <Link to={`/${user.unique_id}`} className="suggest-user-content">
             <div className="userTitleWrapper">
               <h4 className="user-title">{user.unique_id}</h4>
               <div className="user-bluev">

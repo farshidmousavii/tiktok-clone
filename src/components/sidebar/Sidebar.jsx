@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AiFillHome, AiOutlineHome } from "react-icons/ai";
 import { BsPeople, BsPeopleFill } from "react-icons/bs";
@@ -9,7 +9,27 @@ import "./sidebar.css";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(null);
+  const route = window.location.pathname;
+
+  useEffect(() => {
+    switch (route) {
+      case "/":
+        setIndex(1);
+        break;
+      case "/following":
+        setIndex(2);
+        break;
+
+      case "/live":
+        setIndex(3);
+        break;
+
+      default:
+        break;
+    }
+  }, [route]);
+
   return (
     <div className="tiktok__sidebar">
       <div className="tiktok__sidebar-mainContainer">
