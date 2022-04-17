@@ -17,3 +17,8 @@ export const getFeed = () => {
   const params = { region: "US" };
   return http.get("/feed", { params, headers });
 };
+
+export const getUserInfo = (id) => {
+  const params = { id: `${id}` };
+  return http.get("/user", { params, headers });
+};

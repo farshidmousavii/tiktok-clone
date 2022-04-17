@@ -29,7 +29,10 @@ const Main = () => {
     return feeds.map((feed) => {
       return (
         <div className="tiktok__main-item-Container" key={feed.aweme_id}>
-          <Link to={`/${feed.author.unique_id}`}>
+          <Link
+            to={`/${feed.author.unique_id}`}
+            state={{ id: feed.author.uid }}
+          >
             <span className="avatarContainer">
               <img
                 src={
@@ -46,7 +49,11 @@ const Main = () => {
           <div className="tiktok__main-item">
             <div className="titleContainer">
               <div className="titleContainer__top">
-                <Link to={`/${feed.author.unique_id}`} style={{ flex: 1 }}>
+                <Link
+                  to={`/${feed.author.unique_id}`}
+                  state={{ id: feed.author.uid }}
+                  style={{ flex: 1 }}
+                >
                   <div className="authorContainer">
                     <div className="authorContainer__author">
                       <h3>{feed.author.unique_id}</h3>

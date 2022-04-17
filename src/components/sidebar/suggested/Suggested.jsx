@@ -18,8 +18,8 @@ const Suggested = ({ open }) => {
         >
           <Link
             to={`/${user.unique_id}`}
+            state={{ id: user.uid }}
             className="suggest-user-avatar"
-            onClick={() => console.log(user.unique_id)}
           >
             <div>
               <span>
