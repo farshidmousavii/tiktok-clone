@@ -22,3 +22,18 @@ export const getUserInfo = (id) => {
   const params = { id: `${id}` };
   return http.get("/user", { params, headers });
 };
+
+export const getUserFollowerTotal = (id) => {
+  const params = { id: `${id}` };
+  return http.get("/user/follower", { params, headers });
+};
+
+export const getUserFollowingTotal = (id) => {
+  const params = { id: `${id}` };
+  return http.get("/user/following", { params, headers });
+};
+
+export const getUserVideos = (id) => {
+  const params = { id: `${id}` };
+  return http.get("user/videos", { params, headers });
+};
