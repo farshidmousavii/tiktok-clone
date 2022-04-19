@@ -9,3 +9,4 @@ export { default as Reddit } from "./Reddit";
 export { default as Telegram } from "./Telegram";
 export { default as Twitter } from "./Twitter";
 export { default as Whatsapp } from "./Whatsapp";
+export { default as Link } from "./Link";
