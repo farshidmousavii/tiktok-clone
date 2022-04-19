@@ -8,7 +8,6 @@ const Profile = () => {
   const location = useLocation();
   const id = location.state.id;
   const { userInfo, follower, following, videos, likes } = useUserInfo(id);
-  console.log(likes);
   const renderProfile = () => {
     return (
       <div className={styles.profileWrapper}>
