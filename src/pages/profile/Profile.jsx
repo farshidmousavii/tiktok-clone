@@ -1,13 +1,15 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import badge from "../../assets/images/tiktok_ver.png";
 import useUserInfo from "../../hooks/userInfo/useUserInfo";
+import linkShare from "../../assets/images/linkShare.svg";
 import styles from "./profile.module.css";
 
 const Profile = () => {
   const location = useLocation();
   const id = location.state.id;
-  const { userInfo, follower, following, videos, likes } = useUserInfo(id);
+  const { userInfo, follower, following, videos, likes, bio, shareUrl } =
+    useUserInfo(id);
   const renderProfile = () => {
     return (
       <div className={styles.profileWrapper}>
@@ -56,6 +58,17 @@ const Profile = () => {
               <span>Likes</span>
             </div>
           </div>
+          <div className={styles.userBio}>
+            <h2 className={styles.userDesc}>{bio}</h2>
+          </div>
+          {shareUrl && (
+            <div className={styles.shareLink}>
+              <Link to={shareUrl} target="_blank">
+                {linkShare}
+                <span>{shareUrl}</span>
+              </Link>
+            </div>
+          )}
         </div>
         <div className="userLayoutIemContainer"></div>
       </div>

@@ -143,3 +143,36 @@
   line-height: 22px;
   margin-left: 6px;
 }
+
+.userDesc {
+  text-align: left;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgb(18, 18, 18);
+  white-space: pre-line;
+  margin-top: 10px;
+}
+
+.shareLink {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.shareLink a {
+  text-align: none;
+  color: rgb(254, 44, 85);
+  cursor: pointer;
+}
+
+.shareLink a span {
+  padding-left: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -14,6 +14,8 @@ const useUserInfo = (id) => {
   const [following, setFollowing] = useState(0);
   const [videos, setVideos] = useState([]);
   const [likes, setLikes] = useState(0);
+  const [bio, setBio] = useState("");
+  const [shareUrl, setShareUrl] = useState(null);
   useEffect(() => {
     const getUserStatistics = async () => {
       try {
@@ -33,6 +35,8 @@ const useUserInfo = (id) => {
               setUserInfo(singleUser);
               setFollower(NumberFormatter(userFollower));
               setFollowing(NumberFormatter(userFollowing));
+              setBio(singleUser.signature);
+              setShareUrl(singleUser.share_info.share_url);
               setVideos([]);
               userVideos.map((video) => {
                 setVideos((prevVideos) => {
@@ -120,6 +124,8 @@ const useUserInfo = (id) => {
     following,
     videos,
     likes,
+    bio,
+    shareUrl,
   };
 };
 export default useUserInfo;
