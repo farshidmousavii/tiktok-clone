@@ -1,4 +1,4 @@
-const Link = () => {
+const LinkShare = () => {
   return (
     <svg
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -19,4 +19,4 @@ const Link = () => {
   );
 };
 
-export default Link;
+export default LinkShare;
