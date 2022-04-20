@@ -11,6 +11,7 @@
   padding-right: 92px;
   max-width: 624px;
   padding-right: 92px;
+  position: relative;
 }
 
 .userInfo {
@@ -175,4 +176,17 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.shareActions {
+  position: absolute;
+  top: 11px;
+  cursor: pointer;
+  right: 52px;
+}
+
+.shareActions .shareIcon {
+  width: 30px;
+  height: 30px;
+  transform: rotateY(180deg);
 }

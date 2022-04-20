@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import badge from "../../assets/images/tiktok_ver.png";
 import useUserInfo from "../../hooks/userInfo/useUserInfo";
-import linkShare from "../../assets/images/linkShare.svg";
+import { LinkShare } from "../../components/icons";
+import { BiShare } from "react-icons/bi";
 import styles from "./profile.module.css";
+import Share from "../../components/share/Share";
 
 const Profile = () => {
+  const [show, setShow] = useState(false);
+
   const location = useLocation();
   const id = location.state.id;
+
   const { userInfo, follower, following, videos, likes, bio, shareUrl } =
     useUserInfo(id);
   const renderProfile = () => {
@@ -64,11 +69,21 @@ const Profile = () => {
           {shareUrl && (
             <div className={styles.shareLink}>
               <Link to={shareUrl} target="_blank">
-                {linkShare}
+                <LinkShare />
                 <span>{shareUrl}</span>
               </Link>
             </div>
           )}
+          <div
+            className={styles.shareActions}
+            onMouseOver={() => setShow(true)}
+          >
+            <span onClick={() => setShow(!show)}>
+              <BiShare className={styles.shareIcon} />
+            </span>
+
+            {show && <Share show={show} handleShow={() => setShow(false)} />}
+          </div>
         </div>
         <div className="userLayoutIemContainer"></div>
       </div>
