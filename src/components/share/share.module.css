@@ -1,0 +1,61 @@
+.shareContainer {
+  position: absolute;
+  z-index: 1;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  top: calc(100% + 5px);
+  box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+  transition: visibility 0, opacity 1s linear;
+  opacity: 1;
+  transform: translateY(8px);
+}
+.hide {
+  position: absolute;
+  z-index: 1;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  top: calc(100% + 15px);
+  box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+  opacity: 0;
+  display: none;
+  transition: visibility 0, opacity 0.5s linear;
+}
+
+.shareWrapper {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  width: 280px;
+  padding: 8px 0px;
+  max-height: 448px;
+  overflow: auto;
+}
+.shareWrapper .arrow {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 16px;
+}
+.shareWrapper a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 11px 16px;
+}
+
+.shareWrapper .hidden {
+  display: none;
+}
+
+.shareWrapper a:hover {
+  background-color: rgba(197, 197, 197, 0.2);
+}
+
+.shareActions span {
+  width: 100%;
+  width: 100%;
+}
