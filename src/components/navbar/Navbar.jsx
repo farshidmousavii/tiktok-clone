@@ -17,7 +17,7 @@ const Navbar = () => {
   const blurHandler = () => {
     setFormStyle(null);
   };
-
+  console.log("re-render");
   return (
     <>
       <div className="tiktok__navbar-container_left">
