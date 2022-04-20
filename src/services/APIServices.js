@@ -37,3 +37,8 @@ export const getUserVideos = (id) => {
   const params = { id: `${id}` };
   return http.get("user/videos", { params, headers });
 };
+
+export const getUserByName = (name) => {
+  const params = { query: `${name}` };
+  return http.get("/search/user", { params, headers });
+};
