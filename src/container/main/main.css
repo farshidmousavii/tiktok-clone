@@ -138,7 +138,7 @@
   flex-direction: column;
   align-items: center;
 }
-.feed_video-actions span {
+.video_sideBar-actionItem_span {
   width: 48px;
   height: 48px;
   background-color: rgba(22, 24, 35, 0.06);
